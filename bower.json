@@ -1,39 +1,19 @@
 {
-  "name": "rise-google-calendar",
+  "name": "content-event-current-day",
   "version": "1.0.0",
   "authors": [
-    "Stuart Lees <stuart.lees@risevision.com>"
+    "Rise Vision"
   ],
-  "description": "Rise Vision web component for retrieving Google Calendar event data.",
-  "keywords": [
-    "web-component",
-    "web-components",
-    "polymer",
-    "calendar",
-    "google-calendar"
-  ],
-  "main": "rise-google-calendar.html",
+  "description": "HTML Theme displaying current and next event using the rise-google-calendar web component.",
   "license": "GPLv3",
-  "homepage": "https://github.com/Rise-Vision/rise-google-calendar",
+  "homepage": "https://github.com/Rise-Vision/content-event-current-day",
   "ignore": [
     "/.*",
-    "/test/",
-    "/demo/",
     "/node_modules"
   ],
   "dependencies": {
-    "google-apis": "GoogleWebComponents/google-apis#^1.0",
     "moment": "~2.10.3",
-    "moment-timezone": "~0.4.0",
-    "polymer": "Polymer/polymer#^1.0.0",
+    "rise-google-calendar": "https://github.com/Rise-Vision/rise-google-calendar.git#1.0.0",
     "underscore": "~1.8.2"
-  },
-  "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "pure": "^0.6.0",
-    "rise-page": "https://github.com/Rise-Vision/rise-page.git",
-    "rise-playlist": "https://github.com/Rise-Vision/rise-playlist.git",
-    "rise-playlist-item": "https://github.com/Rise-Vision/rise-playlist-item.git",
-    "web-component-tester": "*"
   }
 }

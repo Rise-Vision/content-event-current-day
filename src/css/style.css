@@ -46,7 +46,7 @@ actual styles
 .wrapper:after {
   content: "";
   position: absolute;
-  background-image: url("img/city.jpeg");
+  background-image: url("../img/city.jpeg");
   background-size: cover;
   top: 0;
   left: 0;
@@ -229,7 +229,7 @@ actual styles
 	height:25vh;
 	position: absolute;
 	bottom:0;
-	left:0;	
+	left:0;
 }
 
 .area--nextEvent:before {

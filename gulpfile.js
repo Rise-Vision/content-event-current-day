@@ -8,20 +8,53 @@
   var uglify = require('gulp-uglify');
   var colors = require("colors");
   var runSequence = require("run-sequence");
-  var wct = require("web-component-tester").gulp.init(gulp);
   var bower = require("gulp-bower");
   var del = require("del");
 
+  var appJSFiles = [
+    "src/js/**/*.js",
+    "src/index.html",
+    "!./src/components/**/*"
+  ];
+
   gulp.task("clean-bower", function(cb){
-    del(["./bower_components/**"], cb);
+    del(["./src/components/**"], cb);
+  });
+
+  gulp.task("clean", function (cb) {
+    del(['./dist/**'], cb);
   });
 
   gulp.task("lint", function() {
-    return gulp.src("./*.html")
-      .pipe(jshint.extract("always"))
+    return gulp.src(appJSFiles)
+      .pipe(jshint.extract("auto"))
       .pipe(jshint())
       .pipe(jshint.reporter("jshint-stylish"))
       .pipe(jshint.reporter("fail"));
+  });
+
+  gulp.task("components", function() {
+    return gulp.src([
+      "src/components/google-apis/*.html",
+      "src/components/iron-jsonp-library/iron-jsonp-library.html",
+      "src/components/moment/moment.js",
+      "src/components/moment-timezone/builds/*.js",
+      "src/components/polymer/*.*{html,js}",
+      "src/components/rise-google-calendar/rise-google-calendar.html",
+      "src/components/underscore/*.js",
+      "src/components/webcomponentsjs/webcomponents*.js",
+    ], {base: "./src/"})
+      .pipe(gulp.dest("dist/"));
+  });
+
+  gulp.task("source", ["lint"], function() {
+    return gulp.src([
+      "src/css/**/*",
+      "src/img/**/*",
+      "src/js/**/*",
+      "src/index.html"
+    ], {base: "./src/"})
+      .pipe(gulp.dest("dist/"));
   });
 
   // ***** Primary Tasks ***** //
@@ -38,19 +71,14 @@
       .pipe(gulp.dest("./"));
   });
 
-  gulp.task("test", function(cb) {
-    runSequence("test:local", cb);
-  });
-
   gulp.task("build", function (cb) {
-    runSequence("lint", cb);
+    runSequence(["clean"], "source", "components", cb);
   });
 
   gulp.task("default", [], function() {
     console.log("********************************************************************".yellow);
     console.log("  gulp bower-clean-install: delete and re-install bower components".yellow);
     console.log("  gulp bump: increment the version".yellow);
-    console.log("  gulp test: run unit and integration tests".yellow);
     console.log("  gulp build: build component".yellow);
     console.log("********************************************************************".yellow);
     return true;
