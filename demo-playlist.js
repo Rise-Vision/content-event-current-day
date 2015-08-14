@@ -34,7 +34,8 @@ var DemoPlaylist = function () {
   function _getRow(event) {
     var fragment = document.createDocumentFragment(),
       tr = document.createElement("tr"),
-      dateCell, summaryCell, descriptionCell, startTimeCell, endTimeCell, date;
+      dateCell, titleCell, startTimeCell, endTimeCell, locationCell, date;
+       tr.className += tr.className ? " rows" : "rows";
 
     if (event.end && event.end.date) {
       // This is an All Day event
@@ -56,13 +57,9 @@ var DemoPlaylist = function () {
     dateCell.className = "dateClassTest";
     dateCell.innerHTML = date;
 
-    summaryCell = document.createElement("td");
-    summaryCell.className = "summaryClassTest";
-    summaryCell.innerHTML = event.summary;
-
-    descriptionCell = document.createElement("td");
-    descriptionCell.className = "summaryDescriptionTest";
-    descriptionCell.innerHTML = event.description;
+    titleCell = document.createElement("td");
+    titleCell.className = "summaryTitleTest";
+    titleCell.innerHTML = event.summary;
 
     startTimeCell = document.createElement("td");
     startTimeCell.className = "startTimeClass";
@@ -72,12 +69,16 @@ var DemoPlaylist = function () {
     endTimeCell.className = "endTimeClass";
     endTimeCell.innerHTML = event.end.dateTime;
 
+    locationCell = document.createElement("td");
+    locationCell.className = "locationClass";
+    locationCell.innerHTML = event.location;
+
 
     tr.appendChild(dateCell);
-    tr.appendChild(summaryCell);
-    tr.appendChild(descriptionCell);
+    tr.appendChild(titleCell);
     tr.appendChild(startTimeCell);
     tr.appendChild(endTimeCell);
+    tr.appendChild(locationCell);
 
     fragment.appendChild(tr);
 

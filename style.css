@@ -194,7 +194,7 @@ actual styles
 	margin-right: 2vw;
 }
 
-.main--eventDate {
+.main--eventDate p{
 	text-transform: uppercase;
 	font-size: 3.5vw;
 }

@@ -58,7 +58,7 @@ function startTime() {
     	hours = '0' + hours;
     }
 
-    document.getElementById('clock').innerHTML = hours + ':' + minutes + ampm;
+    // document.getElementById('clock').innerHTML = hours + ':' + minutes + ampm;
     var t = setTimeout(function(){startTime()},500);
 }
 
@@ -89,8 +89,7 @@ function showDate(){
 	$('#weekday').text(weekday);
 }
 
-tableInfo = document.getElementsByTagName('td');
-console.log(tableInfo);
+
 
 
 
