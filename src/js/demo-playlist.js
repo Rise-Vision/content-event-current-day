@@ -1,4 +1,9 @@
-var DemoPlaylist = function () {
+/* global moment */
+
+var RiseVision = RiseVision || {};
+RiseVision.Event = RiseVision.Event || {};
+
+RiseVision.Event.DemoPlaylist = function () {
   "use strict";
 
   // provide the playback functions that control this content which rise-playlist will call
@@ -115,7 +120,7 @@ var DemoPlaylist = function () {
 
       // build the Calendar content with the feed data
       _build(e.detail.items);
-      console.log(e.detail.items); 
+      console.log(e.detail.items);
 
     });
 

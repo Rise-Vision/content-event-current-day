@@ -1,1 +1,3 @@
-src
+src/components/
+node_modules/
+dist/
