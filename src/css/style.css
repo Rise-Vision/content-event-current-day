@@ -129,6 +129,11 @@ actual styles
 	font-size: 5.5vw;
 }
 
+.date--suffix {
+	font-size: 4vw;
+	text-transform: lowercase;
+}
+
 .date--year {
 	text-transform: uppercase;
 	position: absolute;
@@ -184,6 +189,11 @@ actual styles
 .main--eventName {
 	text-transform: uppercase;
 	font-size: 7vw;
+	line-height: 7vw;
+}
+
+.main--eventDate, .main--time, .main--time {
+	line-height: 2vw;
 }
 
 .main--eventDate img {
@@ -195,8 +205,17 @@ actual styles
 }
 
 .main--eventDate p{
+	position: relative;
+	bottom:3vh;
+	left:7vw;
 	text-transform: uppercase;
 	font-size: 3.5vw;
+	max-width: 50vw;
+}
+
+.main--eventDate .main--suffix {
+	font-size: 3vw;
+	text-transform: lowercase;
 }
 
 .main--time img {
@@ -206,8 +225,12 @@ actual styles
 	margin-right: 1.5vw;
 }
 
-.main--time {
+.main--time p{
+	position: relative;
+	bottom:3vh;
+	left:7vw;
 	font-size: 3.5vw;
+	max-width: 50vw;
 }
 
 .main--location img {
@@ -216,11 +239,16 @@ actual styles
 	top:1vh;
 	margin-right: 2.8vw;
 	margin-left: 0.7vw;
+	display: inline-block;
 }
 
-.main--location {
+.main--location p {
+	position: relative;
+	bottom:10vh;
+	left:7vw;
 	text-transform: uppercase;
 	font-size: 5vw;
+	max-width: 50vw;
 }
 
 /*.area--nextEvent styles*/
@@ -291,6 +319,11 @@ actual styles
 	font-weight: 700;
 }
 
+.next--date .next--suffix {
+	font-size: 2vw;
+	text-transform: lowercase;
+}
+
 .next--clock {
 	width:4vw;
 	position: absolute;
@@ -300,7 +333,7 @@ actual styles
 .next--time {
 	position: relative;
 	left:5vw;
-	top:5vh;
+	top:6vh;
 	font-size: 2.8vw;
 	font-weight: 700;
 }

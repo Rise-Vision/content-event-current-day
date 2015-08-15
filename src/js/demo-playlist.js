@@ -79,11 +79,11 @@ RiseVision.Event.DemoPlaylist = function () {
     locationCell.innerHTML = event.location;
 
 
-    tr.appendChild(dateCell);
-    tr.appendChild(titleCell);
-    tr.appendChild(startTimeCell);
-    tr.appendChild(endTimeCell);
-    tr.appendChild(locationCell);
+    // tr.appendChild(dateCell);
+    // tr.appendChild(titleCell);
+    // tr.appendChild(startTimeCell);
+    // tr.appendChild(endTimeCell);
+    // tr.appendChild(locationCell);
 
     fragment.appendChild(tr);
 
