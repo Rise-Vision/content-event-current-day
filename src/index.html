@@ -8,8 +8,9 @@
   <script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="components/rise-google-calendar/rise-google-calendar.html">
 
-  <!-- style sheet -->
+  <!-- build:css css/style.css -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
 
   <!-- fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
@@ -20,17 +21,22 @@
 </head>
 <body>
 
+  <rise-google-calendar
+    calendar-id="cameroncodes.com_l0vl6b8laf08tb39lv2vegd1qg@group.calendar.google.com"
+    refresh="5">
+  </rise-google-calendar>
+
   <div class="wrapper">
 
   <!-- Area containing time and date -->
     <div class="area--date">
       <img src="img/clock2.svg" class="date--clock" alt="clock icon">
-      <p class="date--time">11:37am</p>
+      <p class="date--time"></p>
       <div class="date--subsection">
         <p class="tag--today">Today is</p>
-        <p class="date--weekday">Saturday</p>
-        <p class="date--month">June 1<span class="date--suffix">st</span></p>
-        <p class="date--year">2015</p>
+        <p class="date--weekday"></p>
+        <p class="date--month"></p>
+        <p class="date--year"></p>
         <img src="img/calendar2.svg" class="date--calendarIcon" alt="calendar icon">
       </div>
     </div> <!-- .area--date -->
@@ -61,186 +67,14 @@
 
   </div> <!-- .wrapper -->
 
-<!-- <p id="clock"></p>
-<p id="month"></p>
-<p id="dayOfMonth"></p>
-<p id="weekday"><p>
-<p id="year"></p> -->
-<!-- <p id="date"></p> -->
+  <!-- build:js js/events.js -->
+  <script type="text/javascript" src="components/moment/moment.js"></script>
+  <script type="text/javascript" src="js/theme-events.js"></script>
+  <script type="text/javascript" src="js/today.js"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <!-- endbuild -->
 
-
-<rise-page display-id="VGZUDDWYAZHY">
-
-  <rise-playlist id="playlist">
-
-    <rise-playlist-item>
-      <rise-google-calendar
-        id="googleCalendar"
-        calendar-id="cameroncodes.com_l0vl6b8laf08tb39lv2vegd1qg@group.calendar.google.com"
-        start-date="2015-01-01" end-date="2015-12-31">
-        <!-- Example HTML structure -->
-      <!--   <h3>Component Test</h3> -->
-        <table id="calendarTable" class="pure-table pure-table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-          <!-- dynamically populate table with calendar data -->
-          </tbody>
-        </table>
-      </rise-google-calendar>
-    </rise-playlist-item>
-
-  </rise-playlist>
-
-</rise-page>
-
-<!-- Handy JS library to parse, validate, manipulate, and display dates in JavaScript. -->
-<script src="components/moment/moment.js"></script>
-
-<!-- Importing javascript which is the logic in building and managing the Google Calendar content -->
-<script type="text/javascript" src="js/demo-playlist.js"></script>
-
-<!-- Additional javascript file containing functionality for theme -->
-<script type="text/javascript" src="js/script.js"></script>
-
-<script>
-  /* global RiseVision */
-
-  (function () {
-    "use strict";
-
-    function webComponentsReady() {
-      window.removeEventListener("WebComponentsReady", webComponentsReady);
-
-      // new instance of DemoPlaylist object
-      var demo = new RiseVision.Event.DemoPlaylist();
-
-      // initialize the content
-      demo.init();
-    }
-
-    window.addEventListener("WebComponentsReady", webComponentsReady);
-
-  })();
-</script>
-<script>
-//set the clock
-
-var year,
-  month,
-  dayOfMonth,
-  weekday;
-
-function checkMinutes(i) {
-  if (i<10) {i = "0" + i;}  // add zero in front of numbers < 10
-  return i;
-}
-
-function showDate(){
-  var date = new Date();
-  year = date.getYear();
-  if (year < 1000) {
-    year += 1900;
-  }
-  $("#year").text(year);
-  var monthsArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  month = monthsArray[date.getMonth()];
-  $("#month").text(month);
-  dayOfMonth = date.getDate();
-  $("#dayOfMonth").text(dayOfMonth);
-  var daysArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  weekday = daysArray[date.getDay()];
-  $("#weekday").text(weekday);
-}
-
-function startTime() {
-  showDate();
-  var today = new Date();
-    var hours = today.getHours();
-    // hours = checkHours(hours);
-    var minutes = today.getMinutes();
-    minutes = checkMinutes(minutes);
-    var ampm = "pm";
-    if (hours < 12){
-      ampm = "am";
-    }
-    if (hours > 12){
-      hours -=12;
-      // checkHours(hours);
-    }
-    if (hours < 10){
-      hours = "0" + hours;
-    }
-
-    document.getElementById("clock").innerHTML = hours + ":" + minutes + ampm;
-    setTimeout(function(){startTime();},500);
-}
-
-/*function checkHours(j) {
-    if (j<10) {j = "0" + j;}  // add zero in front of numbers < 10
-    return j;
-}*/
-
-var individualEvents = [];
-
-//set out text on page
-function enterText() {
-  $(".main--eventName").text(individualEvents[0][1]);
-  $(".main--eventDate p").text(individualEvents[0][0]);
-  $(".main--time p").text(individualEvents[0][2] + "-" + individualEvents[0][3]);
-  $(".main--location p").text(individualEvents[0][4]);
-}
-
-function logThis(){
- var rowLength = ($(".rows").length);
-  var rows = $(".rows");
-  console.log(rowLength);
-  var eventDates = [];
-  var eventTitles = [];
-  var eventStartTimes = [];
-  var eventEndTimes = [];
-  var eventLocations = [];
-  var eventDetails = [];
-
-
-  for(var i = 0; i < rowLength; i++){
-    eventDates.push($(rows)[i].getElementsByTagName("td")[0].textContent);
-    eventTitles.push($(rows)[i].getElementsByTagName("td")[1].textContent);
-    eventStartTimes.push($(rows)[i].getElementsByTagName("td")[2].textContent);
-    eventEndTimes.push($(rows)[i].getElementsByTagName("td")[3].textContent);
-    eventLocations.push($(rows)[i].getElementsByTagName("td")[4].textContent);
-  }
-
-
-  for (i = 0; i < rowLength; i++){
-    eventDetails.push(eventDates[i]);
-    eventDetails.push(eventTitles[i]);
-    eventDetails.push(eventStartTimes[i]);
-    eventDetails.push(eventEndTimes[i]);
-    eventDetails.push(eventLocations[i]);
-  }
-
-  while(eventDetails.length) {
-    var individualEvent = eventDetails.splice(0,5);
-    individualEvents.push(individualEvent);
-  }
-  console.log(individualEvents);
-  enterText();
-}
-
-setTimeout(logThis, 3000);
-
-//start the timer
-window.onload = function() {
-  startTime();
-};
-
-// set the date for display
-//var d = new Date();
-// document.getElementById("date").innerHTML = d.toDateString();
-
-
-</script>
 
 </body>
 </html>

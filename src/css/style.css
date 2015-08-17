@@ -122,7 +122,6 @@ actual styles
 }
 
 .date--month {
-	text-transform: uppercase;
 	position: absolute;
 	top:18vh;
 	left:2vw;

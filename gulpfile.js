@@ -6,6 +6,7 @@
   var jshint = require("gulp-jshint");
   var rename = require("gulp-rename");
   var uglify = require('gulp-uglify');
+  var usemin = require("gulp-usemin");
   var colors = require("colors");
   var runSequence = require("run-sequence");
   var bower = require("gulp-bower");
@@ -47,13 +48,16 @@
       .pipe(gulp.dest("dist/"));
   });
 
-  gulp.task("source", ["lint"], function() {
+  gulp.task("images", function() {
     return gulp.src([
-      "src/css/**/*",
       "src/img/**/*",
-      "src/js/**/*",
-      "src/index.html"
     ], {base: "./src/"})
+      .pipe(gulp.dest("dist/"));
+  });
+
+  gulp.task("source", ["lint"], function () {
+    return gulp.src(['./src/index.html'])
+      .pipe(usemin({}))
       .pipe(gulp.dest("dist/"));
   });
 
@@ -72,7 +76,7 @@
   });
 
   gulp.task("build", function (cb) {
-    runSequence(["clean"], "source", "components", cb);
+    runSequence(["clean"], "source", "images", "components", cb);
   });
 
   gulp.task("default", [], function() {
