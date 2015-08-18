@@ -40,8 +40,7 @@ RiseVision.ThemeEvents.Current = function() {
     var eventStart = moment(event.start.dateTime),
       eventEnd = moment(event.end.dateTime),
       current = moment(),
-      suffix = current.format("Do"),
-      month = current.format("MMMM").toUpperCase();
+      suffix = current.format("Do");
 
     // strip out the numbers to only get the suffix
     suffix = suffix.replace(/[0-9]/g, ''); // jshint ignore:line
@@ -49,13 +48,12 @@ RiseVision.ThemeEvents.Current = function() {
     // event name
     _$current.find(".main--eventName").text(event.summary);
     // event date
-    _$current.find(".main--eventDate").append("<p>" + month + " " + current.format("D") +
-      "<span class='main-suffix'>" + suffix.toLowerCase() + "</span>" + " " + current.format("YYYY") + "</p>");
+    _$current.find(".main--eventDate p").html(current.format("MMMM") + " " + current.format("D") +
+      "<span class='main--suffix'>" + suffix + "</span>" + " " + current.format("YYYY"));
     // event time
-    _$current.find(".main--time").append("<p>" +
-      eventStart.format("h:mma") + " - " + eventEnd.format("h:mma") + "</p>");
+    _$current.find(".main--time p").text(eventStart.format("h:mma") + " - " + eventEnd.format("h:mma"));
     // event location
-    _$current.find(".main--location").append("<p>" + event.location + "</p>");
+    _$current.find(".main--location p").text(event.location);
 
     // ensure these are shown
     _$current.find(".main--eventDate").show();
@@ -66,39 +64,15 @@ RiseVision.ThemeEvents.Current = function() {
 
   function _getCurrentEvent(events) {
     var currentEvent = null,
-      todayEvents = [],
       now = moment(),
       event;
 
-    // compile list of todays events only
-    events.some(function (event) {
-      var startDate;
-
-      // ensure this is not an all day event
-      if (event.start && event.end && event.start.dateTime && event.end.dateTime) {
-        startDate = moment(event.start.dateTime).format("YYYY-MM-DD");
-
-        // is it today
-        if (moment(startDate).isSame(now.format("YYYY-MM-DD"))) {
-          todayEvents.push(event);
-          return false;
-        }
-
-        if(moment(startDate).isAfter(now.format("YYYY-MM-DD"))) {
-          // this event and all further ones will be after todays date, break out of inspecting the events array
-          return true;
-        }
-      } else {
-        return false;
-      }
-    });
-
-    for (var i =0; i < todayEvents.length; i += 1) {
+    for (var i =0; i < events.length; i += 1) {
       event = events[i];
 
       // is the end time after right now
       if (moment(event.end.dateTime).isAfter(now)) {
-        // is the start time the same or after right now
+        // is the start time the same or before right now
         if (moment(event.start.dateTime).isSame(now) || moment(event.start.dateTime).isBefore(now)) {
           currentEvent = event;
           break;
