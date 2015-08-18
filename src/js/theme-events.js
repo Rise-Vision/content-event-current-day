@@ -4,8 +4,11 @@ RiseVision.ThemeEvents = {};
 RiseVision.ThemeEvents = (function () {
   "use strict";
 
-  var calendar, today;
+  var calendar, today, current;
 
+  /*
+   *  Public Methods
+   */
   function init() {
     // create instance of Today object/section
     today = new RiseVision.ThemeEvents.Today();
@@ -17,13 +20,13 @@ RiseVision.ThemeEvents = (function () {
   }
 
   function onCalendarInit(events) {
-    console.log("onCalendarInit", events);
-    // TODO: continue here
+    // create new instance of Current object/section
+    current = new RiseVision.ThemeEvents.Current();
+    current.init(events);
   }
 
   function onCalendarRefresh(events) {
-    console.log("onCalendarRefresh", events);
-    // TODO: continue here
+    current.update(events);
   }
 
   return {
