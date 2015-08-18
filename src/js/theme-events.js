@@ -8,36 +8,6 @@ RiseVision.ThemeEvents = (function () {
 
   var _calendar, _today, _current, _next;
 
-  function _getTodaysEvents(events) {
-    var _todayEvents = [],
-      now = moment();
-
-    // compile list of todays events only
-    events.some(function (event) {
-      var startDate;
-
-      // ensure this is not an all day event
-      if (event.start && event.end && event.start.dateTime && event.end.dateTime) {
-        startDate = moment(event.start.dateTime).format("YYYY-MM-DD");
-
-        // is it today
-        if (moment(startDate).isSame(now.format("YYYY-MM-DD"))) {
-          _todayEvents.push(event);
-          return false;
-        }
-
-        if(moment(startDate).isAfter(now.format("YYYY-MM-DD"))) {
-          // this event and all further ones will be after todays date, break out of inspecting the events array
-          return true;
-        }
-      } else {
-        return false;
-      }
-    });
-
-    return _todayEvents;
-  }
-
   /*
    *  Public Methods
    */
@@ -52,7 +22,7 @@ RiseVision.ThemeEvents = (function () {
   }
 
   function onCalendarInit(events) {
-    var todayEvents = _getTodaysEvents(events);
+    var todayEvents = RiseVision.ThemeEvents.Common.getTodaysEvents(events);
 
     // create new instance of Current object/section
     _current = new RiseVision.ThemeEvents.Current();
@@ -64,7 +34,7 @@ RiseVision.ThemeEvents = (function () {
   }
 
   function onCalendarRefresh(events) {
-    var todayEvents = _getTodaysEvents(events);
+    var todayEvents = RiseVision.ThemeEvents.Common.getTodaysEvents(events);
 
     // update Current and Next section with latest array of todays events
     _current.update(todayEvents);

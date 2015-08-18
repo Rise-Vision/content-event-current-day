@@ -10,14 +10,6 @@ RiseVision.ThemeEvents.Next = function() {
 
   var _nextEvent = null;
 
-  function _compareEvents(event1, event2) {
-    if (!moment(event1.start.dateTime).isSame(moment(event2.start.dateTime))) {
-      return false;
-    }
-
-    return moment(event1.end.dateTime).isSame(moment(event2.end.dateTime));
-  }
-
   function _noNextEvent() {
     // display message as event name
     _$next.find(".next--event").text("No Events Scheduled");
@@ -91,7 +83,7 @@ RiseVision.ThemeEvents.Next = function() {
     if (updateNextEvent) {
       if (_nextEvent) {
         // is this a new next event
-        if (!_compareEvents(updateNextEvent, _nextEvent)) {
+        if (!RiseVision.ThemeEvents.Common.compareEvents(updateNextEvent, _nextEvent)) {
           // this is a new current event that has started
           _reset();
           _nextEvent = $.extend({}, updateNextEvent);
