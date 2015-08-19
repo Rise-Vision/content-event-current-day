@@ -59,6 +59,11 @@ RiseVision.ThemeEvents.Today = function() {
         _update();
       }, _intervalDuration);
     }
+
+    // remove the initial "hide" class so this area is visible
+    _$today.removeClass("hide");
+    // fade in
+    _$today.hide().fadeIn(250);
   }
 
   return {

@@ -89,6 +89,11 @@ RiseVision.ThemeEvents.Current = function() {
     } else {
       _noEvent();
     }
+
+    // remove the initial "hide" class so this area is visible
+    _$current.removeClass("hide");
+    // fade in
+    _$current.hide().fadeIn(250);
   }
 
   function update(events) {
