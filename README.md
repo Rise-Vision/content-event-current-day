@@ -5,7 +5,7 @@ This HTML theme was created to display the current and next event for a single d
 
 ## Steps to run the Current Event theme
 
-1. Fork or download the entire content-event-current-day repository. You will also need to run `npm install` and `bower install` to install the dependencies required for the the template. Bower is a package manager for Javascript libraries and frameworks. All third-party Javascript dependencies are listed in the bower.json file. To install Bower, run the following command in Terminal: `npm install -g bower`. Should you encounter any errors, try running the following command instead: `sudo npm install -g bower`.
+1. Fork or download the entire content-event-current-day repository. You will also need to run `npm install` and `bower install` to install the dependencies required for the the theme. Bower is a package manager for Javascript libraries and frameworks. All third-party Javascript dependencies are listed in the bower.json file. To install Bower, run the following command in Terminal: `npm install -g bower`. Should you encounter any errors, try running the following command instead: `sudo npm install -g bower`.
 ![diagram showing where to find the folder](img/src/img/readmeImage1.png)
 
 2. Inside the content-event-current-day folder you will find the src folder. You can modify the files inside the src folder to fit your needs (see below on how to modify specific elements).  
@@ -43,7 +43,7 @@ You can then change the src attribute to the path of the icon of your choice.
 
 
 ####Changing The Text Content
-The text content is displayed through the use of the `rise-google-calendar` web component. Full details for this component can be found here # 
+The text content is displayed through the use of the `rise-google-calendar` web component.
 In order for the component to access the data you need to create a public google calendar and ensure that all events you create are also public. The settings menu for the calendar is located in the top right corner of the calendar page. The button to make the event public is found here:
 ![screenshot showing button to make event public](src/img/diagramPublicEvent.png)
 
@@ -51,26 +51,13 @@ The next step is to locate the following code in the index.html file:
 
 ```
   <rise-google-calendar
-        id="googleCalendar"
-        calendar-id="cameroncodes.com_l0vl6b8laf08tb39lv2vegd1qg@group.calendar.google.com"
-        start-date="2015-01-01" end-date="2015-12-31">
-        <!-- Example HTML structure -->
-      <!--   <h3>Component Test</h3> -->
-        <table id="calendarTable" class="pure-table pure-table-bordered">
-          <thead>
-          </thead>
-          <tbody>
-          <!-- dynamically populate table with calendar data -->
-          </tbody>
-        </table>
+    calendar-id="cameroncodes.com_l0vl6b8laf08tb39lv2vegd1qg@group.calendar.google.com"
+    refresh="5">
   </rise-google-calendar>
 
 ```
 
 The `calendar-id` attribute should be set to the id for your own public calendar. This id can be found by selecting calendar settings, clicking on the calendars link in the top line, and then clicking on the 'Edit settings' or 'Shared: Edit settings' link corresponding to the calendar you wish to collect the data from. The ID for the calendar can then be copied from here:![screenshot showing calendar ID](src/img/calendarid.png)
-
-The start date and end date can be used to specify a specific range of dates. This theme looks for all upcoming events for the current day. 
-
 
 You can then edit the text within the cells of the spreadsheet and the changes will appear in the display.
 

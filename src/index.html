@@ -2,7 +2,27 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>Calendar Event Theme</title>
+  <title>HTML Theme | Calendar Event</title>
+  <meta name="description" content="The Calendar Event theme was created to display the current and next event for a single day." />
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Calendar Event Theme">
+  <meta itemprop="description" content="The Calendar Event theme was created to display the current and next event for a single day.">
+  <meta itemprop="image" content="img/eventScreenshot.png">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@RiseVision">
+  <meta name="twitter:title" content="Calendar Event Theme">
+  <meta name="twitter:description" content="The Calendar Event theme was created to display the current and next event for a single day.">
+  <meta name="twitter:image:src" content="img/eventScreenshot.png">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Calendar Event" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://storage.googleapis.com/risemedialibrary-f114ad26-949d-44b4-87e9-8528afc76ce4/Rise%20Vision%20Themes/theme-event-current-day/index.html" />
+  <meta property="og:image" content="img/eventScreenshot.png" />
+  <meta property="og:description" content="The Calendar Event theme was created to display the current and next event for a single day." />
 
   <!-- rise-google-calendar dependencies -->
   <script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -13,7 +33,7 @@
   <!-- endbuild -->
 
   <!-- fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -21,7 +41,7 @@
 </head>
 <body>
 
-  <!-- calendar-id="risevision.com_i903j5ktbl91uf06mdckakk658@group.calendar.google.com" -->
+  
   <rise-google-calendar
     calendar-id="cameroncodes.com_l0vl6b8laf08tb39lv2vegd1qg@group.calendar.google.com"
     refresh="5">
@@ -31,14 +51,14 @@
 
   <!-- Area containing time and date -->
     <div class="area--date hide">
-      <img src="img/clock2.svg" class="date--clock" alt="clock icon">
+      <img src="img/clock.svg" class="date--clock" alt="clock icon">
       <p class="date--time"></p>
       <div class="date--subsection">
         <p class="tag--today">Today is</p>
         <p class="date--weekday"></p>
         <p class="date--month"></p>
         <p class="date--year"></p>
-        <img src="img/calendar2.svg" class="date--calendarIcon" alt="calendar icon">
+        <img src="img/calendar.svg" class="date--calendarIcon" alt="calendar icon">
       </div>
     </div> <!-- .area--date -->
 
@@ -46,13 +66,15 @@
     <div class="area--mainEvent hide">
       <p class="tag--current">Current event</p>
       <ul class="main--eventList">
-        <li class="main--eventName"></li>
+        <li class="main--eventName">
+          <p class="noEventText"></p>
+        </li>
         <li class="main--eventDate">
-          <img src="img/calendar2.svg" class="main--calendar" alt="calendar icon">
+          <img src="img/calendar.svg" class="main--calendar" alt="calendar icon">
           <p></p>
         </li>
         <li class="main--time">
-          <img src="img/clock2.svg" class="main--clock" alt="clock icon">
+          <img src="img/clock.svg" class="main--clock" alt="clock icon">
           <p></p>
         </li>
         <li class="main--location">
@@ -68,9 +90,9 @@
       <p class="tag--next">Next event</p>
       <p class="next--event"></p>
       <div class="next--subsection">
-        <img src="img/calendar2.svg" class="next--calendar" alt="calendar icon">
+        <img src="img/calendar.svg" class="next--calendar" alt="calendar icon">
         <p class="next--date"></p>
-        <img src="img/clock2.svg" class="next--clock" alt="clock icon">
+        <img src="img/clock.svg" class="next--clock" alt="clock icon">
         <p class="next--time"></p>
       </div>
     </div> <!-- .area--nextEvent -->

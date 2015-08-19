@@ -281,6 +281,7 @@ actual styles
 	font-size: 3.7vw;
 	font-weight: 400;
 	position: relative;
+	display: inline-block;
 	left:2vw;
 	top:1vh;
 }
