@@ -10,10 +10,6 @@ RiseVision.ThemeEvents = (function () {
    *  Public Methods
    */
   function init() {
-    // create instance of Today object/section
-    _today = new RiseVision.ThemeEvents.Today();
-    _today.init();
-
     // create new instance of Calendar object which manages rise-google-calendar component
     _calendar = new RiseVision.ThemeEvents.Calendar();
     _calendar.init();
@@ -21,6 +17,10 @@ RiseVision.ThemeEvents = (function () {
 
   function onCalendarInit(events) {
     var todayEvents = RiseVision.ThemeEvents.Common.getTodaysEvents(events);
+
+    // create instance of Today object/section
+    _today = new RiseVision.ThemeEvents.Today();
+    _today.init();
 
     // create new instance of Current object/section
     _current = new RiseVision.ThemeEvents.Current();

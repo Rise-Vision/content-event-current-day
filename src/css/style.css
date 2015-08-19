@@ -337,3 +337,7 @@ actual styles
 	font-weight: 700;
 }
 
+.hide {
+  visibility: hidden;
+}
+
