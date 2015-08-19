@@ -12,7 +12,7 @@ RiseVision.ThemeEvents.Next = function() {
 
   function _noNextEvent() {
     // display message as event name
-    _$next.find(".next--event").text("No Events Scheduled");
+    _$next.find(".next--event").text("No Event Scheduled");
 
     // hide the rest
     _$next.find(".next--subsection").hide();

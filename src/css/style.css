@@ -98,9 +98,9 @@ actual styles
 .tag--today {
 	text-transform: uppercase;
 	position: absolute;
-	top:4vh;
+	top:10vh;
 	left:2vw;
-	font-size: 700;
+	font-size: 400;
 }
 
 .tag--today:before {
@@ -116,14 +116,14 @@ actual styles
 .date--weekday {
 	text-transform: uppercase;
 	position: absolute;
-	top:9vh;
+	top:16vh;
 	left:2vw;
-	font-size: 4.5vw;
+	font-size: 4.3vw;
 }
 
 .date--month {
 	position: absolute;
-	top:18vh;
+	top:23vh;
 	left:2vw;
 	font-size: 5.5vw;
 }
@@ -136,7 +136,7 @@ actual styles
 .date--year {
 	text-transform: uppercase;
 	position: absolute;
-	top:29vh;
+	top:31vh;
 	left:2vw;
 	font-size: 7vw;
 }
@@ -145,25 +145,25 @@ actual styles
 	width:6.5vw;
 	position: absolute;
 	right:3.5vw;
-	top:31vh;
+	top:34.5vh;
 }
 
 /*.area--mainEvent styles*/
 .area--mainEvent {
 	width:70vw;
 	height:75vh;
-	position: absolute;
-	top:0;
-	right:0;
+	float:right;
 }
 
 .tag--current {
 	text-transform: uppercase;
 	font-size: 4vw;
 	font-weight: 400;
-	position: absolute;
+	position: relative;
+	top:2vh;
 	left:2vw;
-	top:3vh;
+	display: inline-block;
+	margin: 0;
 }
 
 .tag--current:before{
@@ -171,8 +171,9 @@ actual styles
 	position: absolute;
 	width:12vw;
 	height:0.5vh;
-	bottom:2.5vh;
+	bottom:2.3vh;
 	right:-12vw;
+	z-index:5;
 	background-color: rgba(255,255,255,0.5);
 }
 
@@ -182,17 +183,24 @@ actual styles
 	padding: 0;
 	position: relative;
 	left:2vw;
-	top:10vh;
+	top:2vh;
+}
+
+.noEventText {
+	position: relative;
+	top:12vh;
+	text-align: center;
 }
 
 .main--eventName {
 	text-transform: uppercase;
 	font-size: 7vw;
-	line-height: 7vw;
+	line-height: 6vw;
+	width:68vw;
 }
 
 .main--eventDate, .main--time, .main--time {
-	line-height: 2vw;
+	line-height: 1vw;
 }
 
 .main--eventDate img {
@@ -205,9 +213,8 @@ actual styles
 
 .main--eventDate p{
 	position: relative;
-	bottom:3vh;
-	left:7vw;
-  text-transform: uppercase;
+	bottom:2vh;
+	left:6vw;
 	font-size: 3.5vw;
 	max-width: 50vw;
 }
@@ -227,7 +234,7 @@ actual styles
 .main--time p{
 	position: relative;
 	bottom:3vh;
-	left:7vw;
+	left:6vw;
 	font-size: 3.5vw;
 	max-width: 50vw;
 }
@@ -235,7 +242,7 @@ actual styles
 .main--location img {
 	width: 3.5vw;
 	position: relative;
-	top:1vh;
+	top:2vh;
 	margin-right: 2.8vw;
 	margin-left: 0.7vw;
 	display: inline-block;
@@ -243,11 +250,11 @@ actual styles
 
 .main--location p {
 	position: relative;
-	bottom:10vh;
-	left:7vw;
+	bottom:9vh;
+	left:6vw;
 	text-transform: uppercase;
 	font-size: 5vw;
-	max-width: 50vw;
+	/*max-width: 50vw;*/
 }
 
 /*.area--nextEvent styles*/
@@ -274,6 +281,7 @@ actual styles
 	font-size: 3.7vw;
 	font-weight: 400;
 	position: relative;
+	display: inline-block;
 	left:2vw;
 	top:1vh;
 }
@@ -291,28 +299,30 @@ actual styles
 .next--event {
 	text-transform: uppercase;
 	position: relative;
-	font-size: 5vw;
+	font-size: 4.7vw;
 	left:2vw;
-	top:-2vh;
+	top:0;
+	line-height: 4vw;
+	width:70vw;
 }
 
 .next--subsection {
 	width:30vw;
 	position: absolute;
-	top:1vh;
+	top:4vh;
 	right:0;
 }
 
 .next--calendar {
 	width:4vw;
 	position: absolute;
-	top:3vh;
+	top:5vh;
 }
 
 .next--date {
 	position: relative;
 	left:5.5vw;
-	top:3vh;
+	top:5vh;
 	font-size: 2.8vw;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -338,6 +348,5 @@ actual styles
 }
 
 .hide {
-  visibility: hidden;
+	visibility: hidden;
 }
-

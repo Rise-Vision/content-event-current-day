@@ -12,7 +12,7 @@ RiseVision.ThemeEvents.Current = function() {
 
   function _noEvent() {
     // display message as event name
-    _$current.find(".main--eventName").text("No Event Scheduled");
+    _$current.find(".main--eventName .noEventText").text("No Event Scheduled");
 
     // hide the rest
     _$current.find(".main--eventDate").hide();
