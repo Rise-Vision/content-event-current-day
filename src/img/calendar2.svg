@@ -6,6 +6,7 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="calendar2" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <rect id="Path-Copy" fill-opacity="0.3" sketch:type="MSShapeGroup" x="0" y="40" width="500" height="400" rx="40"></rect>
             <path d="M0,80.0002553 C0,57.9087243 17.9057764,40 39.9930416,40 L460.006958,40 C482.094505,40 500,57.8989315 500,80.0002553 L500,399.999745 C500,422.091276 482.094224,440 460.006958,440 L39.9930416,440 C17.9054946,440 0,422.101068 0,399.999745 L0,80.0002553 Z M24,80.0040228 C24,68.9561061 32.958139,60 43.9974611,60 L455.002539,60 C466.046832,60 475,68.9461222 475,80.0040228 L475,400.995977 C475,412.043894 466.041861,421 455.002539,421 L43.9974611,421 C32.9531683,421 24,412.053878 24,400.995977 L24,80.0040228 Z" id="Rectangle-1" sketch:type="MSShapeGroup"></path>
             <rect id="Rectangle-3" sketch:type="MSShapeGroup" x="80" y="0" width="20" height="100" rx="10"></rect>
             <rect id="Rectangle-3-Copy-2" sketch:type="MSShapeGroup" x="180" y="0" width="20" height="100" rx="10"></rect>

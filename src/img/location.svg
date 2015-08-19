@@ -5,9 +5,16 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="location" sketch:type="MSLayerGroup" transform="translate(4.000000, 4.000000)">
-            <path d="M100,300 C120,300 200,155.228475 200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 80,300 100,300 Z" id="Oval-1" stroke="#FFFFFF" stroke-width="8" sketch:type="MSShapeGroup"></path>
-            <path d="M100,160 C133.137085,160 160,133.137085 160,100 C160,66.862915 133.137085,40 100,40 C66.862915,40 40,66.862915 40,100 C40,133.137085 66.862915,160 100,160 Z M100.5,151 C129.494949,151 153,128.166522 153,100 C153,71.8334778 129.494949,49 100.5,49 C71.5050506,49 48,71.8334778 48,100 C48,128.166522 71.5050506,151 100.5,151 Z" id="Oval-2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <g id="location" sketch:type="MSLayerGroup" transform="translate(4.000000, 4.000000)" stroke-width="8" stroke="#FFFFFF" fill="#FFFFFF" fill-opacity="0.3">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <g id="location">
+                    <g id="Page-1">
+                        <g id="location">
+                            <path d="M100,300 C120,300 200,155.228475 200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 80,300 100,300 Z M100,160 C133.137085,160 160,133.137085 160,100 C160,66.862915 133.137085,40 100,40 C66.862915,40 40,66.862915 40,100 C40,133.137085 66.862915,160 100,160 Z" id="Oval-1"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
         </g>
     </g>
 </svg>
