@@ -1,5 +1,3 @@
-/* global moment */
-
 var RiseVision = RiseVision || {};
 RiseVision.ThemeEvents = {};
 
