@@ -28,12 +28,7 @@ RiseVision.ThemeEvents.Current = function() {
 
   function _configure(event) {
     var eventStart = moment(event.start.dateTime),
-      eventEnd = moment(event.end.dateTime),
-      current = moment(),
-      suffix = current.format("Do");
-
-    // strip out the numbers to only get the suffix
-    suffix = suffix.replace(/[0-9]/g, ''); // jshint ignore:line
+      eventEnd = moment(event.end.dateTime);
 
     // event name
     _$current.find(".main--eventName").text(event.summary);
