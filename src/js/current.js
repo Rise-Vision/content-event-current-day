@@ -15,7 +15,6 @@ RiseVision.ThemeEvents.Current = function() {
     _$current.find(".main--eventName .noEventText").text("No Event Scheduled");
 
     // hide the rest
-    _$current.find(".main--eventDate").hide();
     _$current.find(".main--time").hide();
     _$current.find(".main--location").hide();
   }
@@ -23,7 +22,6 @@ RiseVision.ThemeEvents.Current = function() {
   function _reset() {
     // clear all the contents
     _$current.find(".main--eventName").text("");
-    _$current.find(".main--eventDate p").remove();
     _$current.find(".main--time p").remove();
     _$current.find(".main--location p").remove();
   }
@@ -39,16 +37,12 @@ RiseVision.ThemeEvents.Current = function() {
 
     // event name
     _$current.find(".main--eventName").text(event.summary);
-    // event date
-    _$current.find(".main--eventDate p").html(current.format("MMMM") + " " + current.format("D") +
-      "<span class='main--suffix'>" + suffix + "</span>" + " " + current.format("YYYY"));
     // event time
     _$current.find(".main--time p").text(eventStart.format("h:mma") + " - " + eventEnd.format("h:mma"));
     // event location
     _$current.find(".main--location p").text(event.location);
 
     // ensure these are shown
-    _$current.find(".main--eventDate").show();
     _$current.find(".main--time").show();
     _$current.find(".main--location").show();
 
