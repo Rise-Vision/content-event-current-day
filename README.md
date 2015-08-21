@@ -1,21 +1,21 @@
 ## Introduction
 
-This HTML theme was created to display the current and next event for a single day using data from a google calendar using the `rise-google-calendar` component. Full documentation for the component can be found[here.](http://rise-vision.github.io/rise-google-calendar/components/rise-google-calendar/) 
+This HTML theme was created to display the current and next event for a single day using data from a google calendar using the `rise-google-calendar` component. Full documentation for the component can be found [here.](http://rise-vision.github.io/rise-google-calendar/components/rise-google-calendar/) 
 
 
 ## Steps to run the Current Event theme
 
 1. Fork or download the entire content-event-current-day repository. You will also need to run `npm install` and `bower install` to install the dependencies required for the the theme. Bower is a package manager for Javascript libraries and frameworks. All third-party Javascript dependencies are listed in the bower.json file. To install Bower, run the following command in Terminal: `npm install -g bower`. Should you encounter any errors, try running the following command instead: `sudo npm install -g bower`.
-![diagram showing where to find the folder](img/src/img/readmeImage1.png)
+![diagram showing where to find the folder](src/img/readmeImage1.png)
 
 2. Inside the content-event-current-day folder you will find the src folder. You can modify the files inside the src folder to fit your needs (see below on how to modify specific elements).  
-![diagram showing file location](img/src/readmeImage2.png)
+![diagram showing file location](src/img/readmeImage2.png)
 
 3. Once any necessary modification have been made, a distribution folder containing all necessary files can be created using the following command while in the root diretory: `gulp build`. You can then host the newly created “dist” folder in rise vision storage or your web hosting service.  
 ![diagram showing how to host folder](src/img/storageEventsReadme.png)
 
 4. Copy the link to the index.html file where you have it hosted and insert the url into a schedule. (you can also add this link to the url gadget within a presentation)  
-![diagram showing where to find link to index.html](img/readme-step4.jpg)
+![diagram showing where to find link to index.html](src/img/readme-step4.jpg)
 
 ##Directions to Modify the Event Theme:##
 
