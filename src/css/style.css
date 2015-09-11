@@ -223,7 +223,8 @@ actual styles
 }
 
 .main--location img {
-	width: 3.5vw;
+	width: 3.8vw;
+	height:8vh;
 	position: absolute;
 	bottom:-0.5vh;
 	left:0.2vw;
@@ -297,7 +298,7 @@ actual styles
 }
 
 .next--calendar {
-	width:4vw;
+	width:3.7vw;
 	position: absolute;
 	top:5vh;
 }
@@ -317,7 +318,7 @@ actual styles
 }
 
 .next--clock {
-	width:4vw;
+	width:3.7vw;
 	position: absolute;
 	top:12vh;
 }
@@ -332,4 +333,34 @@ actual styles
 
 .hide {
 	visibility: hidden;
+}
+
+@media all and (max-width: 1280px) {
+
+	/*reducing icon sizes for smaller screens*/
+
+	.main--time img {
+		width:3.8vw;
+	}
+
+	.main--location p {
+		font-size: 4.8vw;
+		bottom:2.5vh;
+	}
+
+	.main--location img {
+		width:3.8vw;
+		height:7.3vh;
+		left:0.1vw;
+	}
+
+	.next--event {
+		font-size: 4vw;
+		line-height: 4vw;
+		top:-0.2vh;
+	}
+
+	.next--calendar, .next-clock {
+		width:3.5vw;
+	}
 }
