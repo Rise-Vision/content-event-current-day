@@ -5,6 +5,8 @@
   var bump = require("gulp-bump");
   var jshint = require("gulp-jshint");
   var rename = require("gulp-rename");
+  var minifyCSS = require("gulp-minify-css");
+  var sourcemaps = require("gulp-sourcemaps");
   var uglify = require('gulp-uglify');
   var usemin = require("gulp-usemin");
   var colors = require("colors");
@@ -14,7 +16,6 @@
 
   var appJSFiles = [
     "src/js/**/*.js",
-    "src/index.html",
     "!./src/components/**/*"
   ];
 
@@ -28,7 +29,6 @@
 
   gulp.task("lint", function() {
     return gulp.src(appJSFiles)
-      .pipe(jshint.extract("auto"))
       .pipe(jshint())
       .pipe(jshint.reporter("jshint-stylish"))
       .pipe(jshint.reporter("fail"));
@@ -57,7 +57,10 @@
 
   gulp.task("source", ["lint"], function () {
     return gulp.src(['./src/index.html'])
-      .pipe(usemin({}))
+      .pipe(usemin({
+        css: [sourcemaps.init(), minifyCSS(), sourcemaps.write()],
+        js: [sourcemaps.init(), uglify(), sourcemaps.write()]
+      }))
       .pipe(gulp.dest("dist/"));
   });
 
